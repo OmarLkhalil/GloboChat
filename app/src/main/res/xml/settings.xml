@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/title_general"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:defaultValue="@string/defValue_status"
+            android:key="@string/key_status"
+            android:title="@string/title_status"
+            app:dialogTitle="@string/title_dialog_status"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/key_auto_reply"
+            android:summary="@string/summary_auto_reply"
+            android:title="@string/title_auto_reply"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:dependency="@string/key_auto_reply"
+            android:dialogTitle="@string/title_dialog_reply_time"
+            android:entries="@array/entries_auto_reply_time"
+            android:entryValues="@array/values_auto_reply_time"
+            android:key="@string/key_auto_reply_time"
+            android:title="@string/title_auto_reply_time"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:dependency="@string/key_auto_reply"
+            android:dialogTitle="@string/title_dialog_auto_reply_msg"
+            android:entries="@array/pref_auto_reply_messages"
+            android:entryValues="@array/pref_auto_reply_messages"
+            android:key="@string/key_auto_reply_msg"
+            android:title="@string/title_auto_reply_msg"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_app"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="@string/key_account_settings"
+            android:summary="@string/summary_acc_settings"
+            android:title="@string/title_acc_settings"
+            app:iconSpaceReserved="false"
+            />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/key_auto_download"
+            android:summary="@string/summary_auto_download"
+            android:title="@string/title_auto_download"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/key_new_msg_notif"
+            android:title="@string/title_new_msg_notif"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_about"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="@string/key_version"
+            android:summary="@string/summary_version"
+            android:title="@string/title_version"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/key_privacy_policy"
+            android:title="@string/title_privacy_policy"
+            app:iconSpaceReserved="false">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.google.com">
+
+            </intent>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

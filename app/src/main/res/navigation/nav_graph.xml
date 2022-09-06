@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentChatList">
+
+    <fragment
+        android:id="@+id/fragmentChatList"
+        android:name="com.omar.globochat.ChatListFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chat_list" >
+        <action
+            android:id="@+id/action_chatList_to_settings"
+            app:destination="@id/fragmentSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.omar.globochat.SettingsFragment"
+        android:label="Settings">
+
+        <action
+            android:id="@+id/action_settings_to_accSettings"
+            app:destination="@id/fragmentAccSettings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentAccSettings"
+        android:name="com.omar.globochat.AccountSettingsFragment"
+        android:label="Account" />
+
+</navigation>
